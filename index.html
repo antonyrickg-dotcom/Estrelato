@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Rumo ao Estrelato</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="modal.css">
 </head>
 
 <body>
@@ -13,7 +14,7 @@
   <div class="menu">
     <h1 class="logo">RUMO AO ESTRELATO</h1>
 
-    <button class="btn" onclick="criarCarreira()">
+    <button class="btn" onclick="abrirCriacao()">
       CRIAR CARREIRA
     </button>
 
@@ -22,6 +23,38 @@
     </button>
   </div>
 
+  <!-- MODAL -->
+  <div id="modalCriar" class="modal">
+    <div class="modal-box">
+      <h2>Criar Jogador</h2>
+
+      <input id="nome" placeholder="Nome">
+      <input id="sobrenome" placeholder="Sobrenome">
+
+      <select id="posicao">
+        <option>Atacante</option>
+        <option>Meia</option>
+        <option>Volante</option>
+        <option>Zagueiro</option>
+        <option>Goleiro</option>
+      </select>
+
+      <select id="continente">
+        <option>América do Sul</option>
+        <option>Europa</option>
+        <option>África</option>
+        <option>Ásia</option>
+        <option>América do Norte</option>
+      </select>
+
+      <input id="pais" placeholder="País">
+
+      <button class="btn" onclick="criarJogador()">CONFIRMAR</button>
+      <button class="btn gold" onclick="fecharCriacao()">CANCELAR</button>
+    </div>
+  </div>
+
   <script src="script.js"></script>
+  <script src="modal.js"></script>
 </body>
 </html>
