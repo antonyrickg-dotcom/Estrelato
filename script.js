@@ -13,7 +13,7 @@ function continuarCarreira() {
   const carreira = localStorage.getItem("carreira");
 
   if (!carreira) {
-    alert("Nenhuma carreira salva ainda.");
+    alert("Nenhuma carreira salva.");
     return;
   }
 
