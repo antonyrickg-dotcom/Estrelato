@@ -1,4 +1,4 @@
-function novaCarreira() {
+function criarCarreira() {
   const jogador = {
     nome: "Novo Jogador",
     overall: 70,
@@ -6,17 +6,17 @@ function novaCarreira() {
   };
 
   localStorage.setItem("carreira", JSON.stringify(jogador));
-  alert("Nova carreira criada!");
+  alert("Carreira criada!");
 }
 
-function carregarCarreira() {
+function continuarCarreira() {
   const carreira = localStorage.getItem("carreira");
 
   if (!carreira) {
-    alert("Nenhuma carreira salva!");
+    alert("Nenhuma carreira salva ainda.");
     return;
   }
 
   const dados = JSON.parse(carreira);
-  alert("Carreira carregada!\nJogador: " + dados.nome);
+  alert("Bem-vindo de volta, " + dados.nome + "!");
 }
