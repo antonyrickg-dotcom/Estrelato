@@ -24,15 +24,10 @@ function criarJogador() {
 
   localStorage.setItem("carreira", JSON.stringify(jogador));
 
+  // Vai para a página do jogo
   window.location.href = "carreira.html";
 }
-  };
 
-  localStorage.setItem("carreira", JSON.stringify(jogador));
-
-  alert("Jogador criado com sucesso!");
-  fecharCriacao();
-}
 const paisesPorContinente = {
   america_sul: [
     { nome: "Brasil", bandeira: "🇧🇷" },
