@@ -28,3 +28,7 @@
   background: #222;
   color: white;
 }
+.modal select {
+  appearance: none;
+  cursor: pointer;
+}
