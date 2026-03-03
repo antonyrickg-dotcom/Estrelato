@@ -32,3 +32,14 @@
   appearance: none;
   cursor: pointer;
 }
+.modal-box label {
+  display: block;
+  text-align: left;
+  margin-top: 12px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.modal-box button {
+  margin-top: 15px;
+}
