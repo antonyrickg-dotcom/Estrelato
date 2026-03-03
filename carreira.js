@@ -69,6 +69,11 @@ function girarRoleta() {
   if (girando) return;
   girando = true;
 
+  const btnGirar = document.getElementById("btnGirar");
+  const btnContinuar = document.getElementById("btnContinuar");
+
+  btnGirar.disabled = true;
+
   const voltas = Math.floor(Math.random() * 3) + 5;
   const grauExtra = Math.floor(Math.random() * 360);
 
@@ -87,9 +92,13 @@ function girarRoleta() {
 
     salvarOverall(overall);
 
+    // mostrar botão continuar
+    btnContinuar.style.display = "inline-block";
+
     girando = false;
 
   }, 5000);
+}
 }
 
 function salvarOverall(valor) {
