@@ -5,7 +5,7 @@ const roleta = document.getElementById("roleta");
 
 function criarNumeros() {
   const total = 16;
-  const raio = 150; 
+  const raio = 150;
   const anguloPorNumero = 360 / total;
 
   for (let i = 0; i < total; i++) {
@@ -15,31 +15,25 @@ function criarNumeros() {
     const valor = 60 + i;
     numero.innerText = valor;
 
+    // definir cor individual
+    if (valor <= 63) {
+      numero.style.color = "#ff4d4d"; // vermelho
+    } else if (valor <= 68) {
+      numero.style.color = "#ffd700"; // amarelo
+    } else if (valor <= 72) {
+      numero.style.color = "#32cd32"; // verde claro
+    } else {
+      numero.style.color = "#00ff00"; // verde forte
+    }
+
     const angulo = i * anguloPorNumero;
 
     const x = Math.cos((angulo - 90) * Math.PI / 180) * raio;
     const y = Math.sin((angulo - 90) * Math.PI / 180) * raio;
 
-    numero.style.transform = `translate(${x}px, ${y}px)`;
+    numero.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px)`;
 
     roleta.appendChild(numero);
-  }
-}
-
-criarNumeros();
-
-    // cores
-    if (valor <= 63) {
-      div.style.background = "#b30000";
-    } else if (valor <= 68) {
-      div.style.background = "#f2c200";
-    } else if (valor <= 72) {
-      div.style.background = "#32cd32";
-    } else {
-      div.style.background = "#006400";
-    }
-
-    roleta.appendChild(div);
   }
 }
 
@@ -53,7 +47,6 @@ function girarRoleta() {
   const grauExtra = Math.floor(Math.random() * 360);
 
   const rotacaoFinal = (voltas * 360) + grauExtra;
-
   rotacaoAtual += rotacaoFinal;
 
   roleta.style.transform = `rotate(${rotacaoAtual}deg)`;
@@ -61,7 +54,6 @@ function girarRoleta() {
   setTimeout(() => {
     const grauParado = rotacaoAtual % 360;
     const setor = Math.floor((360 - grauParado) / (360 / 16)) % 16;
-
     const overall = 60 + setor;
 
     document.getElementById("resultado").innerText =
