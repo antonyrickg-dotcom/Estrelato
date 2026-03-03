@@ -23,55 +23,52 @@
     </button>
   </div>
 
-  <!-- MODAL -->
-  <div id="modalCriar" class="modal">
-    <div class="modal-box">
-      <h2>Criar Jogador</h2>
+  <div class="modal-box">
+  <h2>Criar Jogador</h2>
 
-      <input id="nome" placeholder="Nome">
-      <input id="sobrenome" placeholder="Sobrenome">
+  <label>Nome</label>
+  <input id="nome" placeholder="Digite o nome">
 
-      <select id="posicao">
-  <option value="">Selecione a posição</option>
+  <label>Sobrenome</label>
+  <input id="sobrenome" placeholder="Digite o sobrenome">
 
-  <optgroup label="ATAQUE">
+  <label>Posição</label>
+  <select id="posicao">
     <option>Centroavante</option>
-    <option>Segundo Atacante</option>
     <option>Extremo Esquerdo</option>
     <option>Extremo Direito</option>
-  </optgroup>
-
-  <optgroup label="MEIO-CAMPO">
     <option>Meia Ofensivo</option>
     <option>Meia Central</option>
-    <option>Meia Esquerda</option>
-    <option>Meia Direita</option>
     <option>Volante</option>
-  </optgroup>
-
-  <optgroup label="DEFESA">
     <option>Lateral Direito</option>
     <option>Lateral Esquerdo</option>
     <option>Zagueiro Central</option>
-  </optgroup>
-
-  <optgroup label="GOLEIRO">
     <option>Goleiro</option>
-  </optgroup>
-</select>
+  </select>
 
-     <select id="continente" onchange="atualizarPaises()">
-  <option value="">Selecione o continente</option>
-  <option value="america_sul">América do Sul</option>
-  <option value="europa">Europa</option>
-  <option value="africa">África</option>
-  <option value="asia">Ásia</option>
-  <option value="america_norte">América do Norte</option>
-</select>
+  <label>Continente</label>
+  <select id="continente" onchange="atualizarPaises()">
+    <option value="">Selecione</option>
+    <option value="america_sul">América do Sul</option>
+    <option value="europa">Europa</option>
+    <option value="africa">África</option>
+    <option value="asia">Ásia</option>
+    <option value="america_norte">América do Norte</option>
+  </select>
 
-<select id="pais">
-  <option value="">Selecione o país</option>
-</select>
+  <label>Nacionalidade</label>
+  <select id="pais">
+    <option value="">Selecione o continente primeiro</option>
+  </select>
+
+  <button class="btn" onclick="criarJogador()">
+    CRIAR JOGADOR
+  </button>
+
+  <button class="btn gold" onclick="fecharCriacao()">
+    CANCELAR
+  </button>
+</div>
 
   <script src="script.js"></script>
   <script src="modal.js"></script>
