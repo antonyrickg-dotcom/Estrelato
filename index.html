@@ -32,12 +32,33 @@
       <input id="sobrenome" placeholder="Sobrenome">
 
       <select id="posicao">
-        <option>Atacante</option>
-        <option>Meia</option>
-        <option>Volante</option>
-        <option>Zagueiro</option>
-        <option>Goleiro</option>
-      </select>
+  <option value="">Selecione a posição</option>
+
+  <optgroup label="ATAQUE">
+    <option>Centroavante</option>
+    <option>Segundo Atacante</option>
+    <option>Extremo Esquerdo</option>
+    <option>Extremo Direito</option>
+  </optgroup>
+
+  <optgroup label="MEIO-CAMPO">
+    <option>Meia Ofensivo</option>
+    <option>Meia Central</option>
+    <option>Meia Esquerda</option>
+    <option>Meia Direita</option>
+    <option>Volante</option>
+  </optgroup>
+
+  <optgroup label="DEFESA">
+    <option>Lateral Direito</option>
+    <option>Lateral Esquerdo</option>
+    <option>Zagueiro Central</option>
+  </optgroup>
+
+  <optgroup label="GOLEIRO">
+    <option>Goleiro</option>
+  </optgroup>
+</select>
 
       <select id="continente">
         <option>América do Sul</option>
