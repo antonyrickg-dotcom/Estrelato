@@ -3,21 +3,30 @@ let rotacaoAtual = 0;
 
 const roleta = document.getElementById("roleta");
 
-// criar números automaticamente
 function criarNumeros() {
-  const totalNumeros = 16; // 60 até 75
-  const angulo = 360 / totalNumeros;
+  const total = 16;
+  const raio = 150; 
+  const anguloPorNumero = 360 / total;
 
-  for (let i = 0; i < totalNumeros; i++) {
+  for (let i = 0; i < total; i++) {
+    const numero = document.createElement("div");
+    numero.classList.add("numero");
 
     const valor = 60 + i;
-    const div = document.createElement("div");
-    div.classList.add("numero");
+    numero.innerText = valor;
 
-    const rotacao = i * angulo;
-    div.style.transform = `rotate(${rotacao}deg) translateY(-180px) rotate(-${rotacao}deg)`;
+    const angulo = i * anguloPorNumero;
 
-    div.innerText = valor;
+    const x = Math.cos((angulo - 90) * Math.PI / 180) * raio;
+    const y = Math.sin((angulo - 90) * Math.PI / 180) * raio;
+
+    numero.style.transform = `translate(${x}px, ${y}px)`;
+
+    roleta.appendChild(numero);
+  }
+}
+
+criarNumeros();
 
     // cores
     if (valor <= 63) {
