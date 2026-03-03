@@ -68,8 +68,8 @@ body {
 }
 .roleta-container {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 380px;
+  height: 380px;
   margin: 30px auto;
 }
 
@@ -80,20 +80,22 @@ body {
   border: 8px solid #111;
   position: relative;
   transition: transform 5s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  background: conic-gradient(
+    #b30000 0deg 90deg,
+    #f2c200 90deg 180deg,
+    #32cd32 180deg 270deg,
+    #006400 270deg 360deg
+  );
 }
 
 .numero {
   position: absolute;
-  width: 50%;
-  height: 50%;
-  top: 50%;
   left: 50%;
-  transform-origin: 0% 0%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  top: 50%;
+  transform-origin: center;
   font-weight: bold;
   color: white;
-  font-size: 18px;
-}
+  font-size: 16px;
+  pointer-events: none;
 }
