@@ -13,8 +13,19 @@ function criarJogador() {
     posicao: document.getElementById("posicao").value,
     continente: document.getElementById("continente").value,
     pais: document.getElementById("pais").value,
-    overall: 65,
+    overall: null,
     temporada: 1
+  };
+
+  if (!jogador.nome || !jogador.sobrenome || !jogador.pais) {
+    alert("Preencha todos os campos!");
+    return;
+  }
+
+  localStorage.setItem("carreira", JSON.stringify(jogador));
+
+  window.location.href = "carreira.html";
+}
   };
 
   localStorage.setItem("carreira", JSON.stringify(jogador));
