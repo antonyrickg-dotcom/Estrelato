@@ -68,8 +68,8 @@ body {
 }
 .roleta-container {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 400px;
+  height: 400px;
   margin: 30px auto;
 }
 
@@ -78,29 +78,22 @@ body {
   height: 100%;
   border-radius: 50%;
   border: 8px solid #111;
-  transition: transform 4s cubic-bezier(0.2, 0.8, 0.2, 1);
-  background: conic-gradient(
-    #b30000 0% 25%,        /* vermelho */
-    #f2c200 25% 50%,       /* amarelo */
-    #32cd32 50% 75%,       /* verde claro */
-    #006400 75% 100%       /* verde escuro */
-  );
+  position: relative;
+  transition: transform 5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.ponteiro {
+.numero {
   position: absolute;
-  top: -15px;
+  width: 50%;
+  height: 50%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 30px solid gold;
-  z-index: 10;
+  transform-origin: 0% 0%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+  font-size: 18px;
 }
-
-#resultado {
-  margin-top: 20px;
-  font-size: 28px;
 }
