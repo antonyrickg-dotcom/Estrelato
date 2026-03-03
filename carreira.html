@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Carreira</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Carreira</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div class="container">
-    <h1>Definindo seu GER inicial...</h1>
+<div class="container">
+  <h1>Definindo seu GER inicial...</h1>
 
-    <div class="roleta">
-      <div id="numero">60</div>
-    </div>
-
-    <button class="btn" onclick="sortearOverall()">
-      GIRAR ROLETA
-    </button>
+  <div class="roleta-container">
+    <div class="ponteiro"></div>
+    <div id="roleta" class="roleta"></div>
   </div>
 
-  <script src="carreira.js"></script>
+  <button class="btn" onclick="girarRoleta()">
+    GIRAR ROLETA
+  </button>
+
+  <h2 id="resultado"></h2>
+</div>
+
+<script src="carreira.js"></script>
 </body>
 </html>
