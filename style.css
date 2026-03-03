@@ -31,7 +31,13 @@ body {
   margin-bottom: 50px;
   text-shadow: 0 0 20px rgba(0,255,0,0.5);
 }
-
+.roleta {
+  font-size: 80px;
+  margin: 40px 0;
+  font-weight: bold;
+  color: lime;
+  text-shadow: 0 0 25px lime;
+}
 .btn {
   display: block;
   width: 320px;
