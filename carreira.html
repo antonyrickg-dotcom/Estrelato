@@ -16,11 +16,17 @@
   <div id="roleta" class="roleta"></div>
 </div>
 
-  <button class="btn" onclick="girarRoleta()">
-    GIRAR ROLETA
-  </button>
+  <button id="btnGirar" class="btn" onclick="girarRoleta()">
+  GIRAR ROLETA
+</button>
 
-  <h2 id="resultado"></h2>
+<button id="btnContinuar" class="btn gold" 
+        onclick="irParaLiga()" 
+        style="display:none;">
+  CONTINUAR
+</button>
+
+<h2 id="resultado"></h2>
 </div>
 
 <script src="carreira.js"></script>
