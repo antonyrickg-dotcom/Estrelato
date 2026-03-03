@@ -68,9 +68,9 @@ body {
 }
 .roleta-container {
   position: relative;
-  width: 380px;
-  height: 380px;
-  margin: 30px auto;
+  width: 400px;
+  height: 400px;
+  margin: 40px auto;
 }
 
 .roleta {
@@ -80,7 +80,20 @@ body {
   border: 8px solid #111;
   position: relative;
   transition: transform 5s cubic-bezier(0.2, 0.8, 0.2, 1);
-  background: #222;
+}
+
+/* SETA */
+.ponteiro {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-bottom: 35px solid gold;
+  z-index: 10;
 }
 
 .numero {
@@ -90,5 +103,6 @@ body {
   transform-origin: center;
   font-weight: bold;
   font-size: 18px;
+  color: white;
   pointer-events: none;
 }
