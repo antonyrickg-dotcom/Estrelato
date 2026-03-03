@@ -3,6 +3,42 @@ let rotacaoAtual = 0;
 
 const roleta = document.getElementById("roleta");
 
+function criarRoleta() {
+  const total = 16;
+  const angulo = 360 / total;
+
+  let gradient = "conic-gradient(";
+
+  for (let i = 0; i < total; i++) {
+    const valor = 60 + i;
+
+    let cor;
+
+    if (valor <= 63) {
+      cor = "#b30000"; // vermelho
+    } else if (valor <= 68) {
+      cor = "#f2c200"; // amarelo
+    } else if (valor <= 72) {
+      cor = "#32cd32"; // verde claro
+    } else {
+      cor = "#006400"; // verde escuro
+    }
+
+    const inicio = i * angulo;
+    const fim = inicio + angulo;
+
+    gradient += `${cor} ${inicio}deg ${fim}deg`;
+
+    if (i < total - 1) gradient += ",";
+  }
+
+  gradient += ")";
+
+  roleta.style.background = gradient;
+
+  criarNumeros();
+}
+
 function criarNumeros() {
   const total = 16;
   const raio = 150;
@@ -15,29 +51,19 @@ function criarNumeros() {
     const valor = 60 + i;
     numero.innerText = valor;
 
-    // definir cor individual
-    if (valor <= 63) {
-      numero.style.color = "#ff4d4d"; // vermelho
-    } else if (valor <= 68) {
-      numero.style.color = "#ffd700"; // amarelo
-    } else if (valor <= 72) {
-      numero.style.color = "#32cd32"; // verde claro
-    } else {
-      numero.style.color = "#00ff00"; // verde forte
-    }
-
     const angulo = i * anguloPorNumero;
 
     const x = Math.cos((angulo - 90) * Math.PI / 180) * raio;
     const y = Math.sin((angulo - 90) * Math.PI / 180) * raio;
 
-    numero.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px)`;
+    numero.style.transform =
+      `translate(-50%, -50%) translate(${x}px, ${y}px)`;
 
     roleta.appendChild(numero);
   }
 }
 
-criarNumeros();
+criarRoleta();
 
 function girarRoleta() {
   if (girando) return;
